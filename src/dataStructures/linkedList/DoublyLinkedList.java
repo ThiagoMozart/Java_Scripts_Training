@@ -23,6 +23,7 @@ public class DoublyLinkedList<T> implements Iterable<T> {
 
     public void clear(){
         Node<T> trav = head;
+
         while(trav != null){
             Node<T> next = trav.next;
             trav.prev = trav.next = null;
