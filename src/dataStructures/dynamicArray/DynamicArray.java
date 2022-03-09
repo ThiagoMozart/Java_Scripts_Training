@@ -43,6 +43,7 @@ public class DynamicArray<T> implements Iterable<T>{
 
     public void add(T element){
         if (len + 1 >= capacity){
+
             if(capacity == 0)
                 capacity = 1;
 
@@ -63,6 +64,7 @@ public class DynamicArray<T> implements Iterable<T>{
 
         T data = array[rm_index];
         T[] new_array = (T[]) new Object[len - 1];
+
         for (int i = 0, j = 0; i < len; i++, j++)
             if (i == rm_index) j--;
             else new_array[j] = array[i];
@@ -73,6 +75,7 @@ public class DynamicArray<T> implements Iterable<T>{
 
     public boolean remove(Object obj){
         int index = indexOf(obj);
+
         if (index == -1) return false;
         removeAt(index);
         return true;
