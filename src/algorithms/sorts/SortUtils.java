@@ -12,9 +12,18 @@ final class SortUtils {
         return true;
     }
 
+    static <T extends Comparable<T>> boolean less(T v, T w) {
+        return v.compareTo(w) < 0;
+    }
+
     static <T extends Comparable<T>> boolean greater(T v, T w){
         return v.compareTo(w) > 0;
     }
+
+    static <T extends Comparable<T>> boolean greaterOrEqual(T v, T w) {
+        return v.compareTo(w) >= 0;
+    }
+
 
     static void print(List<?> toPrint){
         toPrint.stream().map(Object::toString).map(str -> str + " ").forEach(System.out::print);
